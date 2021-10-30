@@ -28,4 +28,21 @@ public class NoteGoal : MonoBehaviour
         }
      
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+
+        //Destroy(collision.gameObject);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Note>().hold == true)
+        {
+            health.damage(-1 * Time.deltaTime);
+
+            print("u eeffed up");
+        }
+    }
+
 }

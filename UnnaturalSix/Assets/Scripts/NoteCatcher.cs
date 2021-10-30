@@ -44,21 +44,35 @@ public class NoteCatcher : MonoBehaviour
         if (Input.GetKey(collision.GetComponent<Note>().key))
         {
             print("hitting it");
-            health.damage(1*Time.deltaTime);
+            
             if (collision.GetComponent<Note>().hold == false)
             {
+                health.damage(1);
                 Destroy(collision.gameObject);
             }
+            else
+            {
+              
+                health.damage(1 * Time.deltaTime);
+            }
+           
 
         }
-        else
+        else if(Input.anyKey)
         {
             print("wong key");
-            health.damage(-1 * Time.deltaTime);
+           
             if (collision.GetComponent<Note>().hold == false)
             {
+                health.damage(-1);
+              
                 Destroy(collision.gameObject);
             }
+            else
+            {
+                health.damage(-1 * Time.deltaTime);
+            }
+          
         }
         
     }
