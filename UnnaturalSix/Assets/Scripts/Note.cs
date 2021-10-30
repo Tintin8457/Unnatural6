@@ -11,6 +11,7 @@ public class Note : MonoBehaviour
     [SerializeField]
     float speed;
     TextMeshPro text;
+    [SerializeField]
     string possibleKeys = "abcdefghijklmnopqrstuvwxyz";
 
     public bool hold;

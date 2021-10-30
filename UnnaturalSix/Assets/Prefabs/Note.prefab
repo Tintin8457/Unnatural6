@@ -284,6 +284,8 @@ MonoBehaviour:
   randomizedKeys: 0
   key: f
   speed: 2
+  possibleKeys: qweeasd
+  hold: 0
 --- !u!61 &563351369554589558
 BoxCollider2D:
   m_ObjectHideFlags: 0
