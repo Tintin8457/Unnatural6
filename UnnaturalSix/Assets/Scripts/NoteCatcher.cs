@@ -30,8 +30,7 @@ public class NoteCatcher : MonoBehaviour
 
 
        float pos = Mathf.Clamp(cam.ScreenToWorldPoint(Input.mousePosition).x,minBound,maxBound)   ;
-       
-
+      
         this.transform.position = new Vector2(pos, this.transform.position.y);
 
        //Gizmos.DrawLine(this.transform.parent)
