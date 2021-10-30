@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d1862158af8ee489424bff36804972, type: 3}
   m_Name: sequence 1
   m_EditorClassIdentifier: 
-  timePerNote: []
+  timePerNote:
+  - 1.335093
+  - 3.7552385
+  - 0.3265375
+  - 1.872704
+  noteLength:
+  - 1.8539172
+  - 0.1105282
+  - 0.064071804
+  - 1.7861253
