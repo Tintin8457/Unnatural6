@@ -56,49 +56,45 @@ public class NoteCatcher : MonoBehaviour
         if (Input.GetKey(collision.GetComponent<Note>().key))
         {
             print("hitting it");
-            keyFeedbackText.text = "Key has been hit!";
             health.damage(1*Time.deltaTime);
-            playerColor.color = new Color(0.02277458f, 1f, 0f, 1f);
-            //ResetPlayerColor();
+            RewardPlayerColor();
+
             if (collision.GetComponent<Note>().hold == false)
             {
-                //ResetPlayerColor();
-                //keyFeedbackText.text = "";
-                //playerColor.color = new Color(1f, 1f, 1f, 1f);
                 Destroy(collision.gameObject);
             }
-
         }
+
         else
         {
             print("wong key");
             health.damage(-1 * Time.deltaTime);
-            keyFeedbackText.text = "You missed the key!";
-            playerColor.color = new Color(1f, 0f, 0f, 1f);
-            //ResetPlayerColor();
+            HurtPlayerColor();
+
             if (collision.GetComponent<Note>().hold == false)
             {
-                //ResetPlayerColor();
-                //keyFeedbackText.text = "";
-                //playerColor.color = new Color(1f, 1f, 1f, 1f);
                 Destroy(collision.gameObject);
-                //ResetPlayerColor();
             }
         }
-        
     }
 
-    //void ResetPlayerColor()
-    //{
-    //    keyFeedbackText.text = "";
-    //    playerColor.color = new Color(1f, 1f, 1f, 1f);
-    //}
+    public void ResetPlayerColor()
+    {
+        keyFeedbackText.text = "";
+        playerColor.color = new Color(1f, 1f, 1f, 1f);
+    }
 
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    keyFeedbackText.text = "";
-    //    playerColor.color = new Color(1f, 1f, 1f, 1f);
-    //}
+    public void RewardPlayerColor()
+    {
+        keyFeedbackText.text = "Key has been hit!";
+        playerColor.color = new Color(0.02277458f, 1f, 0f, 1f);
+    }
+
+    public void HurtPlayerColor()
+    {
+        keyFeedbackText.text = "You missed the key!";
+        playerColor.color = new Color(1f, 0f, 0f, 1f);
+    }
 }
 
 

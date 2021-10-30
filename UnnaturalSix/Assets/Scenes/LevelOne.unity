@@ -725,6 +725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 11400000, guid: f3f4b907b5ab58943a024085934966b2, type: 2}
+  player: {fileID: 764579165}
 --- !u!61 &751577890
 BoxCollider2D:
   m_ObjectHideFlags: 0

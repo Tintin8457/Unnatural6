@@ -9,11 +9,13 @@ public class NoteGoal : MonoBehaviour
     LevelHealth health;
 
     //public TextMeshProUGUI keyFeedbackText;
+    [SerializeField]
+    NoteCatcher player;
 
     // Start is called before the first frame update
     void Start()
     {
-        //keyFeedbackText.text = "";
+    
     }
 
     // Update is called once per frame
@@ -21,16 +23,23 @@ public class NoteGoal : MonoBehaviour
     {
         
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
         if (collision.GetComponent<Note>().hold == false)
         {
-            //keyFeedbackText.text = "You missed the key!";
             health.damage(-1);
+            player.HurtPlayerColor();
+            StartCoroutine("WaitToReset");
             Destroy(collision.gameObject);
             print("u eeffed up");
         }
-     
+    }
+
+    IEnumerator WaitToReset()
+    {
+        yield return new WaitForSeconds(1.5f);
+        player.ResetPlayerColor();
     }
 }
