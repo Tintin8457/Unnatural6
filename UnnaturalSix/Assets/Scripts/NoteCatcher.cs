@@ -17,11 +17,16 @@ public class NoteCatcher : MonoBehaviour
 
     public SpriteRenderer playerColor;
 
+    public AudioSource music;
+    public AudioClip musicClip;
+
     // Start is called before the first frame update
     void Start()
     {
         healthText.text = "Health: " + health.getPlayerHealth().ToString();
         keyFeedbackText.text = "";
+        music.clip = musicClip;
+        music.Play();
 
         Cursor.visible = false;
         //maxBound = this.transform.parent.GetComponent<Collider2D>().bounds.size.x;
