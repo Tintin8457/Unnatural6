@@ -12,6 +12,8 @@ public class Note : MonoBehaviour
     float speed;
     TextMeshPro text;
     string possibleKeys = "abcdefghijklmnopqrstuvwxyz";
+
+    public bool hold;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,27 @@ public class Note : MonoBehaviour
 
 
     }
+    private void OnValidate()
+    {
+        EdgeCollider2D edgeCol = this.GetComponent<EdgeCollider2D>();
+        LineRenderer line = this.GetComponent<LineRenderer>();
+        List<Vector2> vect2List= new List<Vector2>();
+       
+        if (line != null)
+        {
+            hold = true;
+            for (int i = 0; i < line.positionCount; i++)
+            {
+                // print(new Vector2(line.GetPosition(i).x, line.GetPosition(i).y));
+                vect2List.Add(new Vector2(line.GetPosition(i).x, line.GetPosition(i).y));
+                // print(edgeCol.points[i]);
+            }
+            edgeCol.SetPoints(vect2List);
 
+        }
+
+
+    }
     // Update is called once per frame
     void Update()
     {

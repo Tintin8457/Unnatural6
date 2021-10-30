@@ -10,22 +10,27 @@ public class NoteCatcher : MonoBehaviour
     float minBound;
     [SerializeField] float paddleSpeed=1;
     Camera cam;
-
+    [SerializeField]
+    LevelHealth health;
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
 
+        Cursor.visible = false;
+        //maxBound = this.transform.parent.GetComponent<Collider2D>().bounds.size.x;
         minBound = -maxBound;
         cam = Camera.main;
     }
 
+
+  
     // Update is called once per frame
     void Update()
     {
 
 
-        float pos = Mathf.Clamp(cam.ScreenToWorldPoint(Input.mousePosition).x,minBound,maxBound)   ;
+       float pos = Mathf.Clamp(cam.ScreenToWorldPoint(Input.mousePosition).x,minBound,maxBound)   ;
+       
 
         this.transform.position = new Vector2(pos, this.transform.position.y);
 
@@ -38,11 +43,18 @@ public class NoteCatcher : MonoBehaviour
         print("hit somthang");
         if (Input.GetKey(collision.GetComponent<Note>().key))
         {
-            Destroy(collision.gameObject);
+            print("hitting it");
+            health.damage(1);
+            if (collision.GetComponent<Note>().hold == false)
+            {
+                Destroy(collision.gameObject);
+            }
+               
         }
-       
-      
+        
     }
+
+       
 
 
 
