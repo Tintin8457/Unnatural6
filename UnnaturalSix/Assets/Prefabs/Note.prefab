@@ -250,7 +250,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b0522efc80c6ff84a89885cef61f4776, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5ec0309947bec6e4891fe517ac51e2e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -283,11 +283,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomizedKeys: 1
   key: f
-  speed: 2
+  speed: 2.78
   possibleKeys: asdf
   dual: 0
   mouseKey: 0
   hold: 0
+  played: 0
 --- !u!61 &563351369554589558
 BoxCollider2D:
   m_ObjectHideFlags: 0

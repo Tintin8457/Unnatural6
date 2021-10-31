@@ -13,12 +13,13 @@ public class Note : MonoBehaviour
     float speed;
     TextMeshPro text;
     [SerializeField]
-    string possibleKeys = "abcdefghijklmnopqrstuvwxyz";
+    string possibleKeys = "asdf";
 
     public bool dual=false;
     public int mouseKey;
     public bool hold;
     public bool played;
+    
     // Start is called before the first frame update
     EdgeCollider2D edgeCol ;
     LineRenderer line;
@@ -34,6 +35,26 @@ public class Note : MonoBehaviour
             char c = possibleKeys[Random.Range(0, possibleKeys.Length)];
             key = "" + c;
         }
+
+        if (key == "a")
+        {
+            this.GetComponent<SpriteRenderer>().color = new Color(0.57f,0.89f,0.42f);
+            
+        }
+        else if (key == "s")
+        {
+            this.GetComponent<SpriteRenderer>().color = new Color(0.89f, 0.42f, 0.78f);
+        }
+        else if (key == "d")
+        {
+            this.GetComponent<SpriteRenderer>().color = new Color(0.42f, 0.76f, 0.89f);
+        }
+        else if (key == "f")
+        {
+            this.GetComponent<SpriteRenderer>().color = new Color(0.886f, 0.89f, 0.42f);
+        }
+
+
         float rng = Random.value;
         
 
@@ -65,6 +86,28 @@ public class Note : MonoBehaviour
         text.text = key;
         if (line != null)
         {
+            if (key == "a")
+            {
+                this.GetComponent<LineRenderer>().startColor = new Color(0.57f, 0.89f, 0.42f);
+                this.GetComponent<LineRenderer>().endColor = new Color(0.57f, 0.89f, 0.42f);
+
+            }
+            else if (key == "s")
+            {
+                this.GetComponent<LineRenderer>().startColor = new Color(0.89f, 0.42f, 0.78f);
+                this.GetComponent<LineRenderer>().endColor = new Color(0.89f, 0.42f, 0.78f);
+            }
+            else if (key == "d")
+            {
+                this.GetComponent<LineRenderer>().startColor = new Color(0.42f, 0.76f, 0.89f);
+                this.GetComponent<LineRenderer>().endColor = new Color(0.42f, 0.76f, 0.89f);
+            }
+            else if (key == "f")
+            {
+                this.GetComponent<LineRenderer>().startColor = new Color(0.886f, 0.89f, 0.42f);
+                this.GetComponent<LineRenderer>().endColor = new Color(0.886f, 0.89f, 0.42f);
+            }
+
             hold = true;
             for (int i = 0; i < line.positionCount; i++)
             {
