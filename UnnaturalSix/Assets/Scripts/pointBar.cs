@@ -11,8 +11,8 @@ public class pointBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bar1 = this.transform.GetChild(0).GetComponent<Image>();
-        bar2 = this.transform.GetChild(1).GetComponent<Image>();
+        bar1 = this.transform.GetChild(1).GetComponent<Image>();
+        bar2 = this.transform.GetChild(2).GetComponent<Image>();
 
 
     }

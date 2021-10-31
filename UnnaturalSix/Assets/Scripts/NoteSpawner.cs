@@ -8,6 +8,7 @@ public class NoteSpawner : MonoBehaviour
     [SerializeField] Sequencer sequencer;
     [SerializeField] GameObject note;
     [SerializeField] GameObject longNote;
+    [SerializeField] bool dualInput;
     GameObject _note;
     GameObject _longNote;
     Collider2D col;
@@ -16,6 +17,7 @@ public class NoteSpawner : MonoBehaviour
     {
         col = this.GetComponent<Collider2D>();
         StartCoroutine(spawnTimer());
+
 
     }
 
@@ -40,10 +42,12 @@ public class NoteSpawner : MonoBehaviour
             if (noteLength > 0.5)
             {
                 _longNote = Instantiate(longNote, new Vector2(Random.Range(col.bounds.min.x, col.bounds.max.x), this.transform.position.y), this.transform.rotation);
+                _longNote.GetComponent<Note>().dual = dualInput;
             }
             else
             {
                 _note = Instantiate(note, new Vector2((int)Random.Range(col.bounds.min.x, col.bounds.max.x), this.transform.position.y), this.transform.rotation);
+                _note.GetComponent<Note>().dual = dualInput;
             }
         }
 

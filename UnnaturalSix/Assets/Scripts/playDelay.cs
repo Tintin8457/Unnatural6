@@ -7,12 +7,16 @@ public class playDelay : MonoBehaviour
     [SerializeField]
     float delay=10;
 
-    AudioSource audio;
+    AudioSource[] audio;
     // Start is called before the first frame update
     void Start()
     {
-        audio = this.GetComponent<AudioSource>();
-        audio.PlayDelayed(delay);
+        audio = this.GetComponents<AudioSource>();
+        for(int i = 0; i < audio.Length; i++)
+        {
+            audio[i].PlayDelayed(delay);
+        }
+      
 
        
     }
@@ -20,6 +24,10 @@ public class playDelay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        audio.pitch = Time.timeScale;
+        for (int i = 0; i < audio.Length; i++)
+        {
+            audio[i].pitch = Time.timeScale;
+        }
+       
     }
 }

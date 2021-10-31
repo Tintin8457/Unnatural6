@@ -19,6 +19,8 @@ public class Note : MonoBehaviour
     public int mouseKey;
     public bool hold;
     // Start is called before the first frame update
+   
+    
     void Start()
     {
         if (randomizedKeys)
@@ -30,13 +32,13 @@ public class Note : MonoBehaviour
         
 
 
-        if (rng >= 0.5)
-        {
-            dual = true;
-        }else
-        {
-            dual = false;
-        }
+        //if (rng >= 0.5)
+        //{
+        //    dual = true;
+        //}else
+        //{
+        //    dual = false;
+        //}
         if (dual)
         {
             mouseKey = Random.Range(0,2);
@@ -50,11 +52,6 @@ public class Note : MonoBehaviour
                 this.GetComponent<SpriteRenderer>().color = Color.blue;
             }
         }
-       
-        
-
-
-      
 
 
         text = this.transform.GetComponentInChildren<TextMeshPro>();
