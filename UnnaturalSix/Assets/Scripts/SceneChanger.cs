@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-
+    private void Awake()
+    {
+        Cursor.visible = true;
+    }
 
     public void loadLevel(string levelName)
     {
