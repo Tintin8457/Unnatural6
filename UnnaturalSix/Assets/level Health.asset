@@ -17,7 +17,7 @@ MonoBehaviour:
   enemyHealth: 50
   maxPower: 100
   power: 100
-  damageMod: 1
+  damageMod: 2
   bonusPoints: 0
   score:
     highscores: []
