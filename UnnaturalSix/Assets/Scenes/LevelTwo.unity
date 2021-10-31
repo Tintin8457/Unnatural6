@@ -5869,7 +5869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2934e1682c19642819caed9f756c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 5
+  delay: 3.8
 --- !u!82 &805740880
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6526,7 +6526,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1224335500
 GameObject:
@@ -6558,7 +6558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992675965bb69a942b7e03e117e0dc0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sequencer: {fileID: 11400000, guid: e4acb4ca7580bf64aad63e925149b6db, type: 2}
+  sequencer: {fileID: 11400000, guid: 8f629c148ed07074d98780b224a2704e, type: 2}
   note: {fileID: 563351369554589451, guid: 86ccfbe403752e54dad91e474d064731, type: 3}
   longNote: {fileID: 563351369554589451, guid: f3a5d9cab2cd4c24e818b9e6c77ddefa, type: 3}
   dualInput: 0
@@ -6600,7 +6600,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1299213916
 GameObject:

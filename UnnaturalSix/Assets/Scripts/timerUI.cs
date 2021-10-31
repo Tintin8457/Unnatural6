@@ -8,7 +8,7 @@ public class timerUI : MonoBehaviour
     protected float maxTime; 
     public float currentTime;
     [SerializeField]
-    protected TextMeshProUGUI text;
+    TextMeshProUGUI text;
 
 
     // Start is called before the first frame update
