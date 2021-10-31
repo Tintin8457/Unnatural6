@@ -43,7 +43,7 @@ public class NoteSpawner : MonoBehaviour
 
             if (noteLength > 0.5)
             {
-                _longNote = Instantiate(longNote, new Vector2(Random.Range(col.bounds.min.x, col.bounds.max.x), this.transform.position.y), this.transform.rotation);
+                _longNote = Instantiate(longNote, new Vector2((int)Random.Range(col.bounds.min.x, col.bounds.max.x), this.transform.position.y), this.transform.rotation);
                 _longNote.GetComponent<Note>().dual = dualInput;
                 _longNote.GetComponent<LineRenderer>().SetPosition(1, Vector3.up * noteLength*2);
 
