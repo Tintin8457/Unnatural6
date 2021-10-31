@@ -13,8 +13,18 @@ MonoBehaviour:
   m_Name: level Health
   m_EditorClassIdentifier: 
   maxPoints: 100
-  playerHealth: 64.39885
-  enemyHealth: 35.59986
+  playerHealth: 50
+  enemyHealth: 50
   maxPower: 100
   power: 100
   damageMod: 1
+  bonusPoints: 8.760361
+  score:
+    highscores:
+    - 50
+    - 2
+    - 42
+    - 8.760361
+    - 8.760361
+    - 8.760361
+    - 8.760361

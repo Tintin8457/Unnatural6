@@ -11,7 +11,7 @@ public class Dance : MonoBehaviour
     int numOfKeysForDnace=5;
     int currentKeys=0;
 
-    float rot2=20;
+    
     // Start is called before the first frame update
     void Start()
     {
