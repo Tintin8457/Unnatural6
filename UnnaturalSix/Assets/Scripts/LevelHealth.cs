@@ -56,7 +56,7 @@ public class LevelHealth : ScriptableObject
         if (enemyHealth > maxPoints)
         {
             enemyHealth = maxPoints;
-            playerHealth = 0;
+           // playerHealth = 0;
         }
 
     }
