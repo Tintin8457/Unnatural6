@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 public class Note : MonoBehaviour
 {
     [SerializeField]
@@ -14,6 +15,8 @@ public class Note : MonoBehaviour
     [SerializeField]
     string possibleKeys = "abcdefghijklmnopqrstuvwxyz";
 
+    public bool dual=false;
+    public int mouseKey;
     public bool hold;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +26,37 @@ public class Note : MonoBehaviour
             char c = possibleKeys[Random.Range(0, possibleKeys.Length)];
             key = "" + c;
         }
+        float rng = Random.value;
+        
+
+
+        if (rng >= 0.5)
+        {
+            dual = true;
+        }else
+        {
+            dual = false;
+        }
+        if (dual)
+        {
+            mouseKey = Random.Range(0,2);
+          
+            if (mouseKey == 1)
+            {
+                this.GetComponent<SpriteRenderer>().color = Color.red;
+            }
+            else
+            {
+                this.GetComponent<SpriteRenderer>().color = Color.blue;
+            }
+        }
+       
+        
+
+
+      
+
+
         text = this.transform.GetComponentInChildren<TextMeshPro>();
        
         text.text = key;

@@ -25,7 +25,11 @@ public class Sequencer : ScriptableObject
     public float getTimePerNote()
     {
         index++;
-        return timePerNote[index-1];
+        if(index - 1 < timePerNote.Count)
+        {
+            return timePerNote[index - 1];
+        }
+        return -1;
     }
 
     public void writeSequence(float time)
@@ -38,7 +42,11 @@ public class Sequencer : ScriptableObject
     }
     public float getNoteLength()
     {
-        return noteLength[index - 1];
+        if (index - 1 < noteLength.Count)
+        {
+            return noteLength[index - 1];
+        }
+        return -1;
     }
 
 }

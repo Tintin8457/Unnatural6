@@ -10,6 +10,9 @@ public class LevelHealth : ScriptableObject
     [SerializeField]
     float playerHealth, enemyHealth;
 
+    [SerializeField]
+    float damageMod=4;
+
     private void OnValidate()
     {
         setPoints();
@@ -40,7 +43,7 @@ public class LevelHealth : ScriptableObject
     }
     public void damage(float dam)
     {
-        playerHealth += dam;
-        enemyHealth -= dam;
+        playerHealth += dam*damageMod;
+        enemyHealth -= dam * damageMod;
     }
 }

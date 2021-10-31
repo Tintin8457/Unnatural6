@@ -13,11 +13,13 @@ public class playDelay : MonoBehaviour
     {
         audio = this.GetComponent<AudioSource>();
         audio.PlayDelayed(delay);
+
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        audio.pitch = Time.timeScale;
     }
 }

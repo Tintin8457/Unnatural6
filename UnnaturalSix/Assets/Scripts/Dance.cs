@@ -7,10 +7,14 @@ public class Dance : MonoBehaviour
     Camera cam;
     bool rotate=false;
     float rot;
+    [SerializeField]
+    int numOfKeysForDnace=5;
+    int currentKeys=0;
     // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main;
+        
         
         rot = 0;
     }
@@ -20,7 +24,7 @@ public class Dance : MonoBehaviour
     {
         this.transform.eulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y, Mathf.Clamp(cam.ScreenToWorldPoint(Input.mousePosition).x, -5, 5));
 
-        //flip();
+       //flip();
 
     }
 
@@ -29,8 +33,18 @@ public class Dance : MonoBehaviour
         if (Input.anyKeyDown)
         {
 
+            if (currentKeys == numOfKeysForDnace)
+            {
+                rotate = true;
+                currentKeys = 0;
+            }
+            else
+            {
+                rotate = false;
+            }
+            
 
-            rotate = true;
+          
             if (rot == 0)
             {
                 rot += 180;
@@ -40,13 +54,15 @@ public class Dance : MonoBehaviour
                 rot -= 180;
             }
 
-
+            currentKeys += 1;
         }
 
         if (rotate)
         {
             this.transform.eulerAngles = Vector3.up * Mathf.Lerp(this.transform.eulerAngles.y, rot, 0.005f);
+           // 
         }
+       
     }
 
 }

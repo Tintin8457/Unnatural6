@@ -31,18 +31,26 @@ public class NoteSpawner : MonoBehaviour
     IEnumerator spawnTimer()
     {
 
-
         yield return new WaitForSeconds(sequencer.getTimePerNote());
-        float noteLength = sequencer.getNoteLength();
-        if (noteLength > 0.5)
+        if (sequencer.getNoteLength() > -1)
         {
-            _longNote = Instantiate(longNote, new Vector2(Random.Range(col.bounds.min.x, col.bounds.max.x), this.transform.position.y), this.transform.rotation);
+            float noteLength = sequencer.getNoteLength();
+
+
+            if (noteLength > 0.5)
+            {
+                _longNote = Instantiate(longNote, new Vector2(Random.Range(col.bounds.min.x, col.bounds.max.x), this.transform.position.y), this.transform.rotation);
+            }
+            else
+            {
+                _note = Instantiate(note, new Vector2((int)Random.Range(col.bounds.min.x, col.bounds.max.x), this.transform.position.y), this.transform.rotation);
+            }
         }
-        else
+
+        if (sequencer.getTimePerNote() != -1)
         {
-            _note = Instantiate(note, new Vector2(Random.Range(col.bounds.min.x, col.bounds.max.x), this.transform.position.y), this.transform.rotation);
+            StartCoroutine(spawnTimer());
         }
-        
-        StartCoroutine(spawnTimer());
+      
     }
 }

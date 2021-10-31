@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a402b1010c8a0a4cb0f5820131b98e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBound: 5
+  maxBound: 3
   paddleSpeed: 1
   health: {fileID: 11400000, guid: f3f4b907b5ab58943a024085934966b2, type: 2}
 --- !u!212 &764579166
@@ -540,7 +540,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 79c6469d5e4c6384ebe07e4ef4e75efa, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 57b4febedd21f1c4685b254cf0f870fe, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -995,7 +995,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.97, y: 1}
+  m_Size: {x: 5, y: 1}
   m_EdgeRadius: 0
 --- !u!4 &1224335503
 Transform:
@@ -1037,7 +1037,7 @@ RectTransform:
   m_GameObject: {fileID: 1540562661}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children:
   - {fileID: 559045702}
   - {fileID: 990192218}
@@ -1046,7 +1046,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.4651404, y: 1}
   m_AnchorMax: {x: 0.4651404, y: 1}
-  m_AnchoredPosition: {x: 0, y: -118}
+  m_AnchoredPosition: {x: 0, y: -69}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1540562663
@@ -1189,3 +1189,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc4e6592f7e5214bab4cf0a9c78eab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numOfKeysForDnace: 3

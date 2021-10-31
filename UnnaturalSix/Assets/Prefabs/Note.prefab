@@ -281,10 +281,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e860984d0c5d0a441826960995419dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomizedKeys: 0
+  randomizedKeys: 1
   key: f
   speed: 2
-  possibleKeys: qweeasd
+  possibleKeys: asdf
   hold: 0
 --- !u!61 &563351369554589558
 BoxCollider2D:

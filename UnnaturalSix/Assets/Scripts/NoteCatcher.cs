@@ -29,7 +29,7 @@ public class NoteCatcher : MonoBehaviour
     {
 
 
-       float pos = Mathf.Clamp(cam.ScreenToWorldPoint(Input.mousePosition).x,minBound,maxBound)   ;
+       float pos = Mathf.Clamp(cam.ScreenToWorldPoint(Input.mousePosition).x,minBound,maxBound) ;
       
         this.transform.position = new Vector2(pos, this.transform.position.y);
 
@@ -40,39 +40,81 @@ public class NoteCatcher : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         print("hit somthang");
-        if (Input.GetKey(collision.GetComponent<Note>().key))
-        {
-            print("hitting it");
-            
-            if (collision.GetComponent<Note>().hold == false)
-            {
-                health.damage(1);
-                Destroy(collision.gameObject);
-            }
-            else
-            {
-              
-                health.damage(1 * Time.deltaTime);
-            }
-           
 
-        }
-        else if(Input.anyKey)
+        if (collision.GetComponent<Note>().dual)
         {
-            print("wong key");
-           
-            if (collision.GetComponent<Note>().hold == false)
+            if (Input.GetKey(collision.GetComponent<Note>().key)&&Input.GetMouseButton(collision.GetComponent<Note>().mouseKey))
             {
-                health.damage(-1);
-              
-                Destroy(collision.gameObject);
+                print("hitting it");
+
+                if (collision.GetComponent<Note>().hold == false)
+                {
+                    health.damage(1);
+                    Destroy(collision.gameObject);
+                }
+                else
+                {
+
+                    health.damage(1 * Time.deltaTime);
+                }
+
+
             }
-            else
+            else if (Input.anyKey)
             {
-                health.damage(-1 * Time.deltaTime);
+                print("wong key");
+
+                if (collision.GetComponent<Note>().hold == false)
+                {
+                    health.damage(-1);
+
+                    Destroy(collision.gameObject);
+                }
+                else
+                {
+                    health.damage(-1 * Time.deltaTime);
+                }
+
             }
-          
         }
+        else
+        {
+            if (Input.GetKey(collision.GetComponent<Note>().key))
+            {
+                print("hitting it");
+
+                if (collision.GetComponent<Note>().hold == false)
+                {
+                    health.damage(1);
+                    Destroy(collision.gameObject);
+                }
+                else
+                {
+
+                    health.damage(1 * Time.deltaTime);
+                }
+
+
+            }
+            else if (Input.anyKey)
+            {
+                print("wong key");
+
+                if (collision.GetComponent<Note>().hold == false)
+                {
+                    health.damage(-1);
+
+                    Destroy(collision.gameObject);
+                }
+                else
+                {
+                    health.damage(-1 * Time.deltaTime);
+                }
+
+            }
+        }
+
+        
         
     }
 
