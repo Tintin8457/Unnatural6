@@ -9,10 +9,7 @@ public class LevelHealth : ScriptableObject
     float maxPoints;
     [SerializeField]
     float playerHealth, enemyHealth;
-    [SerializeField]
-    float maxPower=100;
-    [SerializeField]
-    float power;
+
     [SerializeField]
     float damageMod=4;
 
@@ -22,7 +19,7 @@ public class LevelHealth : ScriptableObject
     }
     private void OnEnable()
     {
-        power = maxPower;
+        
     }
 
     void setPoints()
@@ -48,30 +45,5 @@ public class LevelHealth : ScriptableObject
     {
         playerHealth += dam*damageMod;
         enemyHealth -= dam * damageMod;
-        if (playerHealth > maxPoints)
-        {
-            playerHealth = maxPoints;
-            enemyHealth = 0;
-        }else
-        if (enemyHealth > maxPoints)
-        {
-            enemyHealth = maxPoints;
-            playerHealth = 0;
-        }
-
-    }
-
-    public void usePower(float amount)
-    {
-        power -= amount;
-
-        if (power > maxPower)
-        {
-            power = maxPower;
-        }
-    }
-    public float getPower()
-    {
-        return power;
     }
 }

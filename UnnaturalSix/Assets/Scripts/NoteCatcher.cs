@@ -66,7 +66,7 @@ public class NoteCatcher : MonoBehaviour
 
 
             }
-            else if (Input.anyKey && !Input.GetMouseButton(collision.GetComponent<Note>().mouseKey)&&!Input.GetKey(KeyCode.Space))
+            else if (Input.anyKey && !Input.GetMouseButton(collision.GetComponent<Note>().mouseKey))
             {
                 print("wong key");
                 HurtPlayerColor();
@@ -102,7 +102,7 @@ public class NoteCatcher : MonoBehaviour
 
 
             }
-            else if (Input.anyKey&& !Input.GetKey(KeyCode.Space))
+            else if (Input.anyKey)
             {
                 print("wong key");
                 HurtPlayerColor();
