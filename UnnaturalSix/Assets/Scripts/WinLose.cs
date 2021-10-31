@@ -27,6 +27,7 @@ public class WinLose : MonoBehaviour
         {
             //lose
             SceneManager.LoadScene(lose, LoadSceneMode.Single);
+            health.resetBonusPoints();
         }
         if (timer.currentTime <= 0)
         {
@@ -39,6 +40,7 @@ public class WinLose : MonoBehaviour
             else
             {
                 SceneManager.LoadScene(lose, LoadSceneMode.Single);
+                health.resetBonusPoints();
             }
            
         }

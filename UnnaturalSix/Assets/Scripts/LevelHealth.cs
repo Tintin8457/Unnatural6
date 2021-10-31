@@ -99,7 +99,7 @@ public class LevelHealth : ScriptableObject
     {
         bonusPoints += (playerHealth - 50);
     }
-    void resetBonusPoints()
+    public void resetBonusPoints()
     {
         bonusPoints = 0;
     }
