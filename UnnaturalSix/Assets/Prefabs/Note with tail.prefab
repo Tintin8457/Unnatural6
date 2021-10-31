@@ -359,9 +359,6 @@ LineRenderer:
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 1, z: 1}
-  - {x: 0.758545, y: 3.201009, z: 1}
-  - {x: -1.050944, y: 5.512614, z: 1}
-  - {x: -1.0144042, y: 9.196208, z: 1}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -435,9 +432,6 @@ EdgeCollider2D:
   m_Points:
   - {x: 0, y: 0}
   - {x: 0, y: 1}
-  - {x: 0.758545, y: 3.201009}
-  - {x: -1.050944, y: 5.512614}
-  - {x: -1.0144042, y: 9.196208}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0

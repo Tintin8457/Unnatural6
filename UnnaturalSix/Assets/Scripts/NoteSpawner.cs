@@ -43,6 +43,8 @@ public class NoteSpawner : MonoBehaviour
             {
                 _longNote = Instantiate(longNote, new Vector2(Random.Range(col.bounds.min.x, col.bounds.max.x), this.transform.position.y), this.transform.rotation);
                 _longNote.GetComponent<Note>().dual = dualInput;
+                _longNote.GetComponent<LineRenderer>().SetPosition(1, Vector3.up * noteLength);
+
             }
             else
             {

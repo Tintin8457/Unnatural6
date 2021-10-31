@@ -992,7 +992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2934e1682c19642819caed9f756c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 5
+  delay: 0
 --- !u!82 &805740880
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1000,7 +1000,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805740876}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b49ea4b45e0504a46ba1b8ae9a5f69df, type: 3}
@@ -1360,7 +1360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713d974bf8055e34cadb794b3c6ba665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sequence: {fileID: 11400000, guid: 1c7ba3dc3a0a5ca49aaffb4dd941986c, type: 2}
+  sequence: {fileID: 11400000, guid: 5dab4873f39400941b8c3e4edd143a45, type: 2}
 --- !u!4 &1216022203
 Transform:
   m_ObjectHideFlags: 0
@@ -1405,7 +1405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992675965bb69a942b7e03e117e0dc0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sequencer: {fileID: 11400000, guid: 1c7ba3dc3a0a5ca49aaffb4dd941986c, type: 2}
+  sequencer: {fileID: 11400000, guid: 5dab4873f39400941b8c3e4edd143a45, type: 2}
   note: {fileID: 563351369554589451, guid: 86ccfbe403752e54dad91e474d064731, type: 3}
   longNote: {fileID: 563351369554589451, guid: f3a5d9cab2cd4c24e818b9e6c77ddefa, type: 3}
   dualInput: 0
@@ -1688,7 +1688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1898301020
 MonoBehaviour:
   m_ObjectHideFlags: 0
