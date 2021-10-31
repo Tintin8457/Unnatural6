@@ -18,13 +18,6 @@ MonoBehaviour:
   maxPower: 100
   power: 100
   damageMod: 1
-  bonusPoints: 8.760361
+  bonusPoints: 0
   score:
-    highscores:
-    - 50
-    - 2
-    - 42
-    - 8.760361
-    - 8.760361
-    - 8.760361
-    - 8.760361
+    highscores: []
