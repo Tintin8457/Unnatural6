@@ -206,6 +206,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &529602758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 529602760}
+  - component: {fileID: 529602759}
+  m_Layer: 0
+  m_Name: WinLose observer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &529602759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529602758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23cbc0e4254e78e4d86453c4f146016a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 11400000, guid: f3f4b907b5ab58943a024085934966b2, type: 2}
+--- !u!4 &529602760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529602758}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7327024, y: -0.9635997, z: -547.08813}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &559045701
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 11400000, guid: f3f4b907b5ab58943a024085934966b2, type: 2}
+  player: {fileID: 764579165}
 --- !u!61 &751577890
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -424,6 +469,7 @@ MonoBehaviour:
   maxBound: 3
   paddleSpeed: 1
   health: {fileID: 11400000, guid: f3f4b907b5ab58943a024085934966b2, type: 2}
+  playerColor: {fileID: 0}
 --- !u!212 &764579166
 SpriteRenderer:
   m_ObjectHideFlags: 0
