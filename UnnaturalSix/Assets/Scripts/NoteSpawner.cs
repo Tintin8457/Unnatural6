@@ -8,8 +8,10 @@ public class NoteSpawner : MonoBehaviour
     [SerializeField] Sequencer sequencer;
     [SerializeField] GameObject note;
     [SerializeField] GameObject longNote;
+    [SerializeField] GameObject powerUp;
     GameObject _note;
     GameObject _longNote;
+    GameObject _powerUp;
     Collider2D col;
     // Start is called before the first frame update
     void Start()
@@ -40,6 +42,7 @@ public class NoteSpawner : MonoBehaviour
             if (noteLength > 0.5)
             {
                 _longNote = Instantiate(longNote, new Vector2(Random.Range(col.bounds.min.x, col.bounds.max.x), this.transform.position.y), this.transform.rotation);
+                _powerUp = Instantiate(powerUp, new Vector2(Random.Range(col.bounds.min.x, col.bounds.max.x), this.transform.position.y), this.transform.rotation);
             }
             else
             {

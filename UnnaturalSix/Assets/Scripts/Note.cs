@@ -93,4 +93,18 @@ public class Note : MonoBehaviour
         this.transform.Translate(Vector2.down * speed * Time.deltaTime);
 
     }
+
+    public void ChangeSpeed()
+    {
+        speed -= 1;
+    }
+
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        ChangeSpeed();
+    //        Destroy(gameObject);
+    //    }
+    //}
 }

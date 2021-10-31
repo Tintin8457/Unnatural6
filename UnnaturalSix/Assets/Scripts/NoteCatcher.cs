@@ -16,6 +16,11 @@ public class NoteCatcher : MonoBehaviour
     [SerializeField]
     SpriteRenderer playerColor;
 
+    //public AudioSource gameAudio;
+
+    [SerializeField]
+    Note notes;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,6 +88,13 @@ public class NoteCatcher : MonoBehaviour
 
             }
         }
+
+        else if (collision.gameObject.tag == "PowerUp")
+        {
+            notes.ChangeSpeed();
+            Destroy(collision.gameObject);
+        }
+
         else
         {
             if (Input.GetKey(collision.GetComponent<Note>().key))
@@ -119,9 +131,6 @@ public class NoteCatcher : MonoBehaviour
 
             }
         }
-
-        
-        
     }
 
 

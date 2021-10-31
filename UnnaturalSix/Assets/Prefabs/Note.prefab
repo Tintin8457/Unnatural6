@@ -285,6 +285,8 @@ MonoBehaviour:
   key: f
   speed: 2
   possibleKeys: asdf
+  dual: 0
+  mouseKey: 0
   hold: 0
 --- !u!61 &563351369554589558
 BoxCollider2D:
