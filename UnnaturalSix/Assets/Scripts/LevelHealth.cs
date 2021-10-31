@@ -21,7 +21,7 @@ public class LevelHealth : ScriptableObject
 
     private void OnValidate()
     {
-        bonusPoints = 0;
+        //bonusPoints = 0;
         setPoints();
     }
     private void OnEnable()
@@ -35,7 +35,7 @@ public class LevelHealth : ScriptableObject
         enemyHealth = maxPoints / 2;
     }
 
-
+ 
     public float getPlayerHealth()
     {
         return playerHealth;

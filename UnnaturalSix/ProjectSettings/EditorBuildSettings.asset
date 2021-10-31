@@ -12,9 +12,39 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelOne.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/LevelTwo.unity
+    guid: 75ce0895a095b944f9539fbb0a0752d9
+  - enabled: 1
+    path: Assets/Scenes/LevelThree.unity
+    guid: e84e79de028f0ee47976cca78a4814ad
+  - enabled: 1
+    path: Assets/Scenes/LevelFour.unity
+    guid: a4fb075c6d523a0478b33863c6b784f7
+  - enabled: 1
+    path: Assets/Scenes/LevelFive.unity
+    guid: 10618b16e5b89e4429eddfc165992ad0
+  - enabled: 1
+    path: Assets/Scenes/LevelSix.unity
+    guid: 07dfd40a2f817214caeeb0b8067edf24
+  - enabled: 1
     path: Assets/Scenes/Lose.unity
     guid: 5208267bd413351489784bf616450614
   - enabled: 1
     path: Assets/Scenes/Win1.unity
     guid: 41b78169168f72b48b58f6ef5a470072
+  - enabled: 1
+    path: Assets/Scenes/Win2.unity
+    guid: 68658bde023b8e54db4cd4b84e85ae28
+  - enabled: 1
+    path: Assets/Scenes/Win3.unity
+    guid: b8a82299a21e0ac41863f4dc4e3a3efd
+  - enabled: 1
+    path: Assets/Scenes/Win4.unity
+    guid: d8596023db8ba8349a5a48b466aad5b0
+  - enabled: 1
+    path: Assets/Scenes/Win5.unity
+    guid: 5aafba00c38bc604b81d9571a56564a8
+  - enabled: 1
+    path: Assets/Scenes/BigWin.unity
+    guid: 85e86088bb1648b42a0b0969a07b6dec
   m_configObjects: {}
