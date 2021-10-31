@@ -161,6 +161,11 @@ public class Highscore
     {
         highscores.Sort();
 
+        if (highscores.Count > 10)
+        {
+            highscores.Remove(0);
+        }
+
     }
 
 

@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BigWin.unity
     guid: 85e86088bb1648b42a0b0969a07b6dec
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: b4294daa27ef42e49b022d6638e80e35
   m_configObjects: {}

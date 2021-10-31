@@ -6556,7 +6556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992675965bb69a942b7e03e117e0dc0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sequencer: {fileID: 11400000, guid: e4acb4ca7580bf64aad63e925149b6db, type: 2}
+  sequencer: {fileID: 11400000, guid: fb1ac9b747092894fbfef7e04680de9c, type: 2}
   note: {fileID: 563351369554589451, guid: 86ccfbe403752e54dad91e474d064731, type: 3}
   longNote: {fileID: 563351369554589451, guid: f3a5d9cab2cd4c24e818b9e6c77ddefa, type: 3}
   dualInput: 0
