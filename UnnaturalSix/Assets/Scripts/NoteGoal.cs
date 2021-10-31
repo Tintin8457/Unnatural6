@@ -24,7 +24,7 @@ public class NoteGoal : MonoBehaviour
         
         if (collision.GetComponent<Note>().hold == false)
         {
-            health.damage(-1);
+            health.damage(-4);
             Destroy(collision.gameObject);
             print("u eeffed up");
             player.HurtPlayerColor();
@@ -36,14 +36,14 @@ public class NoteGoal : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-        //Destroy(collision.gameObject);
+        Destroy(collision.gameObject);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.GetComponent<Note>().hold == true)
+        if (collision.GetComponent<Note>().hold == true&& collision.GetComponent<Note>().played==false)
         {
-            health.damage(-1 * Time.deltaTime);
+            health.damage(-4 * Time.deltaTime);
 
             print("u eeffed up");
         }

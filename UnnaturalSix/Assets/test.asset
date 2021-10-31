@@ -12,5 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d1862158af8ee489424bff36804972, type: 3}
   m_Name: test
   m_EditorClassIdentifier: 
-  timePerNote: []
-  noteLength: []
+  timePerNote:
+  - 1.7711915
+  - 3.4788003
+  - 0.19982469
+  - 1.9405682
+  - 0.34630698
+  - 1.5419915
+  - 0.2069374
+  - 3.126497
+  noteLength:
+  - 0.1001309
+  - 0.11975219
+  - 0.120986186
+  - 0.090118
+  - 0.064911194
+  - 0.075353704
+  - 2.7054923
+  - 0.116815284

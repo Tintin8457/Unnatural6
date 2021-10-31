@@ -12,14 +12,16 @@ public class NoteCatcher : MonoBehaviour
     Camera cam;
     [SerializeField]
     LevelHealth health;
-
+    ParticleSystem particle;
     [SerializeField]
     SpriteRenderer playerColor;
+
+    bool holding=false;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        particle = this.GetComponent<ParticleSystem>();
         Cursor.visible = false;
         //maxBound = this.transform.parent.GetComponent<Collider2D>().bounds.size.x;
         minBound = -maxBound;
@@ -36,10 +38,12 @@ public class NoteCatcher : MonoBehaviour
 
 
        float pos = Mathf.Clamp(cam.ScreenToWorldPoint(Input.mousePosition).x,minBound,maxBound) ;
-      
-        this.transform.position = new Vector2(pos, this.transform.position.y);
+        if (holding == false)
+        {
+            this.transform.position = new Vector2(pos, this.transform.position.y);
+        }
 
-       //Gizmos.DrawLine(this.transform.parent)
+        //Gizmos.DrawLine(this.transform.parent)
 
     }
 
@@ -51,79 +55,80 @@ public class NoteCatcher : MonoBehaviour
         {
             if (Input.GetKey(collision.GetComponent<Note>().key)&&Input.GetMouseButton(collision.GetComponent<Note>().mouseKey))
             {
-                print("hitting it");
-                RewardPlayerColor();
-                if (collision.GetComponent<Note>().hold == false)
-                {
-                    health.damage(1);
-                    Destroy(collision.gameObject);
-                }
-                else
-                {
-
-                    health.damage(1 * Time.deltaTime);
-                }
+                hit(collision);
 
 
             }
             else if (Input.anyKey && !Input.GetMouseButton(collision.GetComponent<Note>().mouseKey)&&!Input.GetKey(KeyCode.Space))
             {
-                print("wong key");
-                HurtPlayerColor();
-                if (collision.GetComponent<Note>().hold == false)
-                {
-                    health.damage(-1);
-
-                    Destroy(collision.gameObject);
-                }
-                else
-                {
-                    health.damage(-1 * Time.deltaTime);
-                }
+                miss(collision);
 
             }
+            
         }
         else
         {
             if (Input.GetKey(collision.GetComponent<Note>().key))
             {
-                print("hitting it");
-                RewardPlayerColor();
-                if (collision.GetComponent<Note>().hold == false)
-                {
-                    health.damage(1);
-                    Destroy(collision.gameObject);
-                }
-                else
-                {
 
-                    health.damage(1 * Time.deltaTime);
-                }
-
+                hit(collision);
 
             }
-            else if (Input.anyKey&& !Input.GetKey(KeyCode.Space))
+            else if (Input.anyKey && !Input.GetKey(KeyCode.Space))
             {
-                print("wong key");
-                HurtPlayerColor();
-                if (collision.GetComponent<Note>().hold == false)
-                {
-                    health.damage(-1);
-
-                    Destroy(collision.gameObject);
-                }
-                else
-                {
-                    health.damage(-1 * Time.deltaTime);
-                }
-
+                miss(collision);
             }
+            
         }
 
         
         
     }
 
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        holding = false;
+    }
+
+    void hit(Collider2D collider)
+    {
+        print("hitting it");
+        RewardPlayerColor();
+        if (collider.GetComponent<Note>().hold == false)
+        {
+            health.damage(1);
+            Destroy(collider.gameObject);
+            particle.Play();   
+        }
+        else
+        {
+            holding = true;
+            collider.GetComponent<Note>().played = true;
+            this.transform.position = new Vector2(collider.transform.position.x, this.transform.position.y);
+            health.damage(1 * Time.deltaTime);
+            particle.Play();
+        }
+
+
+    }
+
+
+    void miss(Collider2D collider)
+    {
+        print("wong key");
+        HurtPlayerColor();
+        if (collider.GetComponent<Note>().hold == false)
+        {
+            health.damage(-4);
+
+            Destroy(collider.gameObject);
+        }
+        else
+        {
+            health.damage(-4 * Time.deltaTime);
+        }
+    }
 
     public void ResetPlayerColor()
     {

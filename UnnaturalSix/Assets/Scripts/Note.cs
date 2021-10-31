@@ -18,11 +18,17 @@ public class Note : MonoBehaviour
     public bool dual=false;
     public int mouseKey;
     public bool hold;
+    public bool played;
     // Start is called before the first frame update
-   
-    
+    EdgeCollider2D edgeCol ;
+    LineRenderer line;
+    List<Vector2> vect2List;
+
     void Start()
     {
+        edgeCol = this.GetComponent<EdgeCollider2D>();
+        line = this.GetComponent<LineRenderer>();
+        vect2List = new List<Vector2>();
         if (randomizedKeys)
         {
             char c = possibleKeys[Random.Range(0, possibleKeys.Length)];
@@ -57,17 +63,6 @@ public class Note : MonoBehaviour
         text = this.transform.GetComponentInChildren<TextMeshPro>();
        
         text.text = key;
-       
-       
-
-
-    }
-    private void OnValidate()
-    {
-        EdgeCollider2D edgeCol = this.GetComponent<EdgeCollider2D>();
-        LineRenderer line = this.GetComponent<LineRenderer>();
-        List<Vector2> vect2List= new List<Vector2>();
-       
         if (line != null)
         {
             hold = true;
@@ -80,6 +75,15 @@ public class Note : MonoBehaviour
             edgeCol.SetPoints(vect2List);
 
         }
+
+
+
+    }
+    private void OnValidate()
+    {
+     
+       
+       
 
 
     }

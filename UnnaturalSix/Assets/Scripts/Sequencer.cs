@@ -10,24 +10,24 @@ public class Sequencer : ScriptableObject
     List<float> timePerNote;
     [SerializeField]
     List<float> noteLength;
-    int index;
+   
     private void OnEnable()
     {
-        index = 0;
+       // index = 0;
     }
 
 
     private void OnDisable()
     {
-        index = 0;
+        //index = 0;
     }
 
-    public float getTimePerNote()
+    public float getTimePerNote(int index)
     {
-        index++;
-        if(index - 1 < timePerNote.Count)
+        
+        if(index < timePerNote.Count)
         {
-            return timePerNote[index - 1];
+            return timePerNote[index];
         }
         return -1;
     }
@@ -40,11 +40,11 @@ public class Sequencer : ScriptableObject
     {
         noteLength.Add(length);
     }
-    public float getNoteLength()
+    public float getNoteLength(int index)
     {
-        if (index - 1 < noteLength.Count)
+        if (index < noteLength.Count)
         {
-            return noteLength[index - 1];
+            return noteLength[index];
         }
         return -1;
     }

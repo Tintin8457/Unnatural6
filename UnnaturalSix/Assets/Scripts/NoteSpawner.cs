@@ -12,12 +12,14 @@ public class NoteSpawner : MonoBehaviour
     GameObject _note;
     GameObject _longNote;
     Collider2D col;
+
+    int index=0;
     // Start is called before the first frame update
     void Start()
     {
         col = this.GetComponent<Collider2D>();
         StartCoroutine(spawnTimer());
-
+        index = 0;
 
     }
 
@@ -33,17 +35,17 @@ public class NoteSpawner : MonoBehaviour
     IEnumerator spawnTimer()
     {
 
-        yield return new WaitForSeconds(sequencer.getTimePerNote());
-        if (sequencer.getNoteLength() > -1)
+        yield return new WaitForSeconds(sequencer.getTimePerNote(index));
+        if (sequencer.getNoteLength(index) > -1)
         {
-            float noteLength = sequencer.getNoteLength();
+            float noteLength = sequencer.getNoteLength(index);
 
 
             if (noteLength > 0.5)
             {
                 _longNote = Instantiate(longNote, new Vector2(Random.Range(col.bounds.min.x, col.bounds.max.x), this.transform.position.y), this.transform.rotation);
                 _longNote.GetComponent<Note>().dual = dualInput;
-                _longNote.GetComponent<LineRenderer>().SetPosition(1, Vector3.up * noteLength);
+                _longNote.GetComponent<LineRenderer>().SetPosition(1, Vector3.up * noteLength*2);
 
             }
             else
@@ -51,9 +53,10 @@ public class NoteSpawner : MonoBehaviour
                 _note = Instantiate(note, new Vector2((int)Random.Range(col.bounds.min.x, col.bounds.max.x), this.transform.position.y), this.transform.rotation);
                 _note.GetComponent<Note>().dual = dualInput;
             }
+            index++;
         }
 
-        if (sequencer.getTimePerNote() != -1)
+        if (sequencer.getTimePerNote(index) != -1)
         {
             StartCoroutine(spawnTimer());
         }
