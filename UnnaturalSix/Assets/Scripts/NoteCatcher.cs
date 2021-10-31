@@ -12,6 +12,10 @@ public class NoteCatcher : MonoBehaviour
     Camera cam;
     [SerializeField]
     LevelHealth health;
+
+    [SerializeField]
+    SpriteRenderer playerColor;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +24,8 @@ public class NoteCatcher : MonoBehaviour
         //maxBound = this.transform.parent.GetComponent<Collider2D>().bounds.size.x;
         minBound = -maxBound;
         cam = Camera.main;
+
+        playerColor = this.GetComponent<SpriteRenderer>();
     }
 
 
@@ -46,7 +52,7 @@ public class NoteCatcher : MonoBehaviour
             if (Input.GetKey(collision.GetComponent<Note>().key)&&Input.GetMouseButton(collision.GetComponent<Note>().mouseKey))
             {
                 print("hitting it");
-
+                RewardPlayerColor();
                 if (collision.GetComponent<Note>().hold == false)
                 {
                     health.damage(1);
@@ -60,10 +66,10 @@ public class NoteCatcher : MonoBehaviour
 
 
             }
-            else if (Input.anyKey)
+            else if (Input.anyKey && !Input.GetMouseButton(collision.GetComponent<Note>().mouseKey))
             {
                 print("wong key");
-
+                HurtPlayerColor();
                 if (collision.GetComponent<Note>().hold == false)
                 {
                     health.damage(-1);
@@ -82,7 +88,7 @@ public class NoteCatcher : MonoBehaviour
             if (Input.GetKey(collision.GetComponent<Note>().key))
             {
                 print("hitting it");
-
+                RewardPlayerColor();
                 if (collision.GetComponent<Note>().hold == false)
                 {
                     health.damage(1);
@@ -99,7 +105,7 @@ public class NoteCatcher : MonoBehaviour
             else if (Input.anyKey)
             {
                 print("wong key");
-
+                HurtPlayerColor();
                 if (collision.GetComponent<Note>().hold == false)
                 {
                     health.damage(-1);
@@ -118,8 +124,24 @@ public class NoteCatcher : MonoBehaviour
         
     }
 
-       
 
+    public void ResetPlayerColor()
+    {
+       // keyFeedbackText.text = "";
+        playerColor.color = new Color(1f, 1f, 1f, 1f);
+    }
+
+    public void RewardPlayerColor()
+    {
+       // keyFeedbackText.text = "Key has been hit!";
+        playerColor.color = new Color(0.02277458f, 1f, 0f, 1f);
+    }
+
+    public void HurtPlayerColor()
+    {
+        //keyFeedbackText.text = "You missed the key!";
+        playerColor.color = new Color(1f, 0f, 0f, 1f);
+    }
 
 
 }

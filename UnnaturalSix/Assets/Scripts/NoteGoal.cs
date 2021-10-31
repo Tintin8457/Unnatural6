@@ -6,6 +6,8 @@ public class NoteGoal : MonoBehaviour
 {
     [SerializeField]
     LevelHealth health;
+    [SerializeField]
+    NoteCatcher player;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,8 @@ public class NoteGoal : MonoBehaviour
             health.damage(-1);
             Destroy(collision.gameObject);
             print("u eeffed up");
+            player.HurtPlayerColor();
+            StartCoroutine(WaitToReset());
         }
      
     }
@@ -44,5 +48,9 @@ public class NoteGoal : MonoBehaviour
             print("u eeffed up");
         }
     }
-
+    IEnumerator WaitToReset()
+    {
+        yield return new WaitForSeconds(1.5f);
+        player.ResetPlayerColor();
+    }
 }
