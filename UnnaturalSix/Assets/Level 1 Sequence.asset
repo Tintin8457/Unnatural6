@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5d1862158af8ee489424bff36804972, type: 3}
-  m_Name: sequence 1
+  m_Name: Level 1 Sequence
   m_EditorClassIdentifier: 
   timePerNote:
   - 0.4309497
