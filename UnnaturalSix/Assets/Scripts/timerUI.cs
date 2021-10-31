@@ -5,9 +5,12 @@ using TMPro;
 public class timerUI : MonoBehaviour
 {
 
-    float maxTime, currentTime;
+    float maxTime; 
+    public float currentTime;
     [SerializeField]
     TextMeshProUGUI text;
+
+
     // Start is called before the first frame update
     void Start()
     {

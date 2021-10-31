@@ -7,8 +7,12 @@ public class WinLose : MonoBehaviour
 
     [SerializeField]
     LevelHealth health;
+    [SerializeField]
+    timerUI timer;
 
-    
+    [SerializeField]
+    string win, lose;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +26,22 @@ public class WinLose : MonoBehaviour
         if (health.getPlayerHealth() < 0)
         {
             //lose
-            SceneManager.LoadScene("Lose", LoadSceneMode.Single);
+            SceneManager.LoadScene(lose, LoadSceneMode.Single);
         }
+        if (timer.currentTime <= 0)
+        {
+            if (health.getPlayerHealth() > 50)
+            {
+                health.giveBonusPoints();
+                SceneManager.LoadScene(win, LoadSceneMode.Single);
 
+            }
+            else
+            {
+                SceneManager.LoadScene(lose, LoadSceneMode.Single);
+            }
+           
+        }
 
     }
 }

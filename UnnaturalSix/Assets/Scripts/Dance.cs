@@ -10,6 +10,8 @@ public class Dance : MonoBehaviour
     [SerializeField]
     int numOfKeysForDnace=5;
     int currentKeys=0;
+
+    float rot2=20;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +24,15 @@ public class Dance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.eulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y, Mathf.Clamp(cam.ScreenToWorldPoint(Input.mousePosition).x, -5, 5));
 
+        this.transform.eulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y, Mathf.Clamp(cam.ScreenToWorldPoint(Input.mousePosition).x, -20, 20));
+        //if (this.transform.eulerAngles.z == rot2)
+        //{
+        //    print("reach rot");
+        //    rot2 = -rot2;
+        //}
+        //this.transform.eulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y, Mathf.MoveTowardsAngle(this.transform.eulerAngles.z, rot2, 10*Time.deltaTime));
+       
        //flip();
 
     }
@@ -59,7 +68,7 @@ public class Dance : MonoBehaviour
 
         if (rotate)
         {
-            this.transform.eulerAngles = Vector3.up * Mathf.Lerp(this.transform.eulerAngles.y, rot, 0.005f);
+            this.transform.eulerAngles = Vector3.up * Mathf.LerpAngle(this.transform.eulerAngles.y, rot, 0.005f);
            // 
         }
        

@@ -16,8 +16,12 @@ public class LevelHealth : ScriptableObject
     [SerializeField]
     float damageMod=4;
 
+    [SerializeField]
+    float bonusPoints=0;
+
     private void OnValidate()
     {
+        bonusPoints = 0;
         setPoints();
     }
     private void OnEnable()
@@ -69,9 +73,18 @@ public class LevelHealth : ScriptableObject
         {
             power = maxPower;
         }
+        else if(power < 0)
+        {
+            power = 0;
+        }
     }
     public float getPower()
     {
         return power;
+    }
+
+    public void giveBonusPoints()
+    {
+        bonusPoints += (playerHealth - 50);
     }
 }

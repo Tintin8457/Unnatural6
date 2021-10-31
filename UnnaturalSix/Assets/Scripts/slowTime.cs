@@ -21,7 +21,7 @@ public class slowTime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space)&&health.getPower()>0)
         {
             Time.timeScale = slowSpeed;
             health.usePower(powerUsage * Time.deltaTime);
@@ -29,7 +29,8 @@ public class slowTime : MonoBehaviour
         }else 
         {
             Time.timeScale = 1;
-            health.usePower(-powerUsage * Time.deltaTime);
+            if (!Input.GetKey(KeyCode.Space))
+                health.usePower(-powerUsage * Time.deltaTime);
             
         }
 

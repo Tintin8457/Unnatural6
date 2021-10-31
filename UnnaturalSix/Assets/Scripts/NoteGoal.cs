@@ -24,7 +24,7 @@ public class NoteGoal : MonoBehaviour
         
         if (collision.GetComponent<Note>().hold == false)
         {
-            health.damage(-4);
+            health.damage(-3);
             Destroy(collision.gameObject);
             print("u eeffed up");
             player.HurtPlayerColor();
@@ -43,7 +43,7 @@ public class NoteGoal : MonoBehaviour
     {
         if (collision.GetComponent<Note>().hold == true&& collision.GetComponent<Note>().played==false)
         {
-            health.damage(-4 * Time.deltaTime);
+            health.damage(-3 * Time.deltaTime);
 
             print("u eeffed up");
         }

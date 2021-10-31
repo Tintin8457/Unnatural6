@@ -15,7 +15,7 @@ public class NoteCatcher : MonoBehaviour
     ParticleSystem particle;
     [SerializeField]
     SpriteRenderer playerColor;
-
+   // float pos=0;
     bool holding=false;
 
     // Start is called before the first frame update
@@ -23,6 +23,8 @@ public class NoteCatcher : MonoBehaviour
     {
         particle = this.GetComponent<ParticleSystem>();
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
+        
         //maxBound = this.transform.parent.GetComponent<Collider2D>().bounds.size.x;
         minBound = -maxBound;
         cam = Camera.main;
@@ -37,7 +39,10 @@ public class NoteCatcher : MonoBehaviour
     {
 
 
-       float pos = Mathf.Clamp(cam.ScreenToWorldPoint(Input.mousePosition).x,minBound,maxBound) ;
+        float pos = Mathf.Clamp(cam.ScreenToWorldPoint(Input.mousePosition).x,minBound,maxBound) ;
+        
+        //pos += Input.GetAxis("Horizontal")* 5*Time.deltaTime;
+        print("pos:" + pos);
         if (holding == false)
         {
             this.transform.position = new Vector2(pos, this.transform.position.y);
@@ -126,7 +131,8 @@ public class NoteCatcher : MonoBehaviour
         }
         else
         {
-            health.damage(-4 * Time.deltaTime);
+            health.damage(-10);
+            Destroy(collider.gameObject);
         }
     }
 
