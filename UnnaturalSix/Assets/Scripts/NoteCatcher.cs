@@ -22,9 +22,13 @@ public class NoteCatcher : MonoBehaviour
    // float pos=0;
     bool holding=false;
 
+    bool paused=false;
+    GameObject pauser;
     // Start is called before the first frame update
     void Start()
     {
+        pauser = GameObject.Find("Pause");
+        pauser.SetActive(false);
         particle = this.GetComponent<ParticleSystem>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
@@ -41,17 +45,23 @@ public class NoteCatcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        paused = pauser.activeInHierarchy;
 
         float pos = Mathf.Clamp(cam.ScreenToWorldPoint(Input.mousePosition).x,minBound,maxBound) ;
         
         //pos += Input.GetAxis("Horizontal")* 5*Time.deltaTime;
         print("pos:" + pos);
-        if (holding == false)
+        if (holding == false&&paused==false)
         {
             this.transform.position = new Vector2(pos, this.transform.position.y);
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            paused = !paused;
+            pauser.SetActive(paused);
+
+        }
         //Gizmos.DrawLine(this.transform.parent)
 
     }
