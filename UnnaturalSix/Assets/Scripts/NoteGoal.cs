@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class NoteGoal : MonoBehaviour
 {
     [SerializeField]
     LevelHealth health;
     [SerializeField]
     NoteCatcher player;
+    [SerializeField]
+    AccuracyText text;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,12 @@ public class NoteGoal : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
+       
+     
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
         if (collision.GetComponent<Note>().hold == false)
         {
             health.damage(-3);
@@ -29,14 +37,11 @@ public class NoteGoal : MonoBehaviour
             print("u eeffed up");
             player.HurtPlayerColor();
             StartCoroutine(WaitToReset());
+            text.Text("MISS");
         }
-     
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
 
         Destroy(collision.gameObject);
+       
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -46,6 +51,7 @@ public class NoteGoal : MonoBehaviour
             health.damage(-3 * Time.deltaTime);
 
             print("u eeffed up");
+            text.Text("MISSING");
         }
     }
     IEnumerator WaitToReset()

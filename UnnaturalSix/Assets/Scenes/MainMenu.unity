@@ -1420,7 +1420,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 914751748}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 423305807}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: loadLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Credits
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &914751748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2065,10 +2077,10 @@ RectTransform:
   m_Father: {fileID: 268749406}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.245, y: 0.3476812}
-  m_AnchorMax: {x: 0.8, y: 0.5973188}
-  m_AnchoredPosition: {x: 98.5, y: -0.5}
-  m_SizeDelta: {x: -193, y: 9}
+  m_AnchorMin: {x: 0.2891538, y: 0.32234085}
+  m_AnchorMax: {x: 0.7361538, y: 0.66265917}
+  m_AnchoredPosition: {x: 6.5, y: -6}
+  m_SizeDelta: {x: -99, y: -16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1302159149
 MonoBehaviour:
@@ -2117,15 +2129,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 77.74
+  m_fontSize: 87.25
   m_fontSizeBase: 77.74
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 56.33
+  m_fontSizeMax: 130
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2153,7 +2165,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -193.20236, y: 0, z: 0, w: 0}
+  m_margin: {x: -53.532837, y: -14.216288, z: -42.237717, w: -4.6391363}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2590,7 +2602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.298, y: 0.04255556}
   m_AnchorMax: {x: 0.70866686, y: 0.725}
-  m_AnchoredPosition: {x: 0.5, y: -25.86612}
+  m_AnchoredPosition: {x: 0.5, y: -25.866089}
   m_SizeDelta: {x: -0.4000244, y: 55.167725}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1527320258

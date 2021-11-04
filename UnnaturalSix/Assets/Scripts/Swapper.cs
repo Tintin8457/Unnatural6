@@ -21,14 +21,14 @@ public class Swapper : MonoBehaviour
     {
         if (speed < 10000&& slowdown==false)
         {
-            speed = Mathf.MoveTowards(speed, 10000, 10);
+            speed = Mathf.MoveTowards(speed, 10000, 5000 * Time.deltaTime);
           
         }
         else
         {
             this.GetComponent<SpriteRenderer>().sprite = changeTo;
             slowdown = true;
-            speed = Mathf.MoveTowards(speed, 0, 10);
+            speed = Mathf.MoveTowards(speed, 0, 5000 * Time.deltaTime);
            
         }
         this.transform.Rotate(Vector3.up * speed * Time.deltaTime);

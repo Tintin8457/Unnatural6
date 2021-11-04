@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NoteCatcher : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class NoteCatcher : MonoBehaviour
     ParticleSystem particle;
     [SerializeField]
     SpriteRenderer playerColor;
+
+    [SerializeField]
+     AccuracyText text;
    // float pos=0;
     bool holding=false;
 
@@ -55,12 +59,16 @@ public class NoteCatcher : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         print("hit somthang");
-
+        float dis = Vector2.Distance(collision.transform.position, this.transform.position);
+     
         if (collision.GetComponent<Note>().dual)
         {
             if (Input.GetKey(collision.GetComponent<Note>().key)&&Input.GetMouseButton(collision.GetComponent<Note>().mouseKey))
             {
-                hit(collision);
+
+              
+
+                hit(collision,1-dis);
 
 
             }
@@ -75,8 +83,8 @@ public class NoteCatcher : MonoBehaviour
         {
             if (Input.GetKey(collision.GetComponent<Note>().key))
             {
-
-                hit(collision);
+              
+                hit(collision,1-dis);
 
             }
             else if (Input.anyKey && !Input.GetKey(KeyCode.Space))
@@ -96,14 +104,27 @@ public class NoteCatcher : MonoBehaviour
         holding = false;
     }
 
-    void hit(Collider2D collider)
+    void hit(Collider2D collider,float mod)
     {
         print("hitting it");
+        print("perfect mod?" + mod);
         RewardPlayerColor();
         if (collider.GetComponent<Note>().hold == false)
         {
-            health.damage(1);
+            health.damage(mod);
             Destroy(collider.gameObject);
+
+            if (mod > .90)
+            {
+                text.Text("PERFECT");
+            }else if (mod > .50)
+            {
+                text.Text("Good");
+            }
+            else
+            {
+                text.Text("ok");
+            }
             particle.Play();   
         }
         else
@@ -134,6 +155,7 @@ public class NoteCatcher : MonoBehaviour
             health.damage(-10);
             Destroy(collider.gameObject);
         }
+        text.Text("Bad Note");
     }
 
     public void ResetPlayerColor()
